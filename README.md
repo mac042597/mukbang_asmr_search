@@ -41,3 +41,6 @@ YouTubeに投稿されているモッパンの動画を
 　メイン機能実装：7/16 - 8/31
 　β版をRUNTEQ内リリース（MVP）：9/1〆切
 　本番リリース：10月初旬
+
+## ■画面遷移図
+　[画面遷移図](https://www.figma.com/file/JTZ59qYLK29Y5UKNqNXjJQ/PF%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1)
