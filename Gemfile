@@ -32,9 +32,20 @@ gem 'net-pop'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'font-awesome-sass'
+gem 'bootstrap'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'rspec-rails'
+  # デバック
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -46,7 +57,25 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # デバック
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  # N+1問題が発生している箇所があったら教えてくれる
+  gem 'bullet'
+  # 各モデルのスキーマ情報をファイルにコメントとして書き出してくれる
+  gem 'annotate'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'sorcery', '0.16.2'
+# sorceryをインストールした際にoauth2をアップデートしてくださいと表示があった為インストール
+gem 'oauth2', '~> 1.0'
+gem 'rails-i18n', '~> 6.0'
+gem 'enum_help'
