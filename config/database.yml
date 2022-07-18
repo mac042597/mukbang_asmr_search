@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: mukbang_asmr_search_production
-  username: mukbang_asmr_search
-  password: <%= ENV['MUKBANG_ASMR_SEARCH_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
