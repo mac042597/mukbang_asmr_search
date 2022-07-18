@@ -1,0 +1,2 @@
+class Onomatopoeia < ApplicationRecord
+end

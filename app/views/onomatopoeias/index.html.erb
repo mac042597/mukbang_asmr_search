@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Onomatopoeias</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Japanese notation</th>
+      <th>Korean notation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @onomatopoeias.each do |onomatopoeia| %>
+      <tr>
+        <td><%= onomatopoeia.japanese_notation %></td>
+        <td><%= onomatopoeia.korean_notation %></td>
+        <td><%= link_to 'Show', onomatopoeia %></td>
+        <td><%= link_to 'Edit', edit_onomatopoeia_path(onomatopoeia) %></td>
+        <td><%= link_to 'Destroy', onomatopoeia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Onomatopoeia', new_onomatopoeia_path %>
