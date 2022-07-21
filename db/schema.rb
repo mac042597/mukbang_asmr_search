@@ -10,16 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_16_140336) do
+ActiveRecord::Schema.define(version: 2022_07_21_125950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "onomatopoeias", force: :cascade do |t|
-    t.string "japanese_notation"
-    t.string "korean_notation"
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "foods", force: :cascade do |t|
+    t.string "japanese_notation", null: false
+    t.string "korean_notation", null: false
+    t.integer "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "onomatopoeia_foods", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "food_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_onomatopoeia_foods_on_category_id"
+    t.index ["food_id"], name: "index_onomatopoeia_foods_on_food_id"
+  end
+
+  create_table "onomatopoeias", force: :cascade do |t|
+    t.string "japanese_notation", null: false
+    t.string "korean_notation", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "crypted_password"
+    t.string "salt"
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "role", limit: 2, default: 0, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  add_foreign_key "onomatopoeia_foods", "categories"
+  add_foreign_key "onomatopoeia_foods", "foods"
 end
