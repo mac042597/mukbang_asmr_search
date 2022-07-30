@@ -8,7 +8,7 @@
 
 # 管理者権限を持つユーザーを追加
 User.create!(
-  { email: "mako.eguchi0425@egmail.com",
+  { email: "mako.eguchi0425@gmail.com",
     name: "マコ@admin",
     password: "12240425",
     password_confirmation: "12240425",
