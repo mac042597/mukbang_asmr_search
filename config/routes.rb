@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  get 'foods/index'
+  root to: 'onomatopoeias#index'
+
   resources :onomatopoeias
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'onomatopoeias#index'
+  resources :users, only: [:new, :create]
+  
+  namespace :admin do
+    root to: 'dashboards#index'
+    get 'login', to: 'user_sessions#new'
+    post 'login', to: 'user_sessions#create'
+    delete 'logout', to: 'user_sessions#destroy'
+  end
 end
