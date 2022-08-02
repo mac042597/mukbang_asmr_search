@@ -9,5 +9,10 @@ environment.plugins.prepend('Provide',
     jQuery: 'jquery/src/jquery'
   })
 )
-
+environment.plugins.prepend('Provide',
+  new webpack.ProvidePlugin({
+    $: 'admin-lte/plugins/jquery/jquery',
+    jQuery: 'admin-lte/plugins/jquery/jquery',
+  })
+)
 module.exports = environment

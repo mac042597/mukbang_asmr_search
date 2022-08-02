@@ -20,7 +20,8 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-    <%= yield %> <!-- ここてindex.html.erbが読み込まれている？ -->
+    <%= render 'shared/flash_message' %>
+    <%= yield %> <!-- ここてindex.html.erbが読込み？ -->
     </div>
     <!-- /.content-wrapper -->
 
@@ -28,6 +29,6 @@
 
   </div>
   <!-- #ここでadmin.jsを読み込む -->
-  <%= javascript_include_tag 'admin' %>
+  <%= javascript_pack_tag 'admin' %>
   </body>
 </html>
