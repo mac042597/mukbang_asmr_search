@@ -1,0 +1,16 @@
+<section class="content">
+  <%= form_with(model: [ :admin, onomatopoeia ]) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %> 
+    <div class="form-group">
+      <%= f.label :japanese_notation %>
+      <%= f.text_field :japanese_notation, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :korean_notation  %>
+      <%= f.text_area :korean_notation , class: 'form-control' %> 
+    </div>
+    <div class="card-footer">
+      <%= f.submit "登録", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</section>

@@ -4,6 +4,11 @@
 // that code so it'll be compiled.
 
 require("jquery")
+require("@rails/ujs").start()
+require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
+require("admin-lte");
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
