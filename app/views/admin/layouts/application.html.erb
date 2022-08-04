@@ -1,34 +1,36 @@
-<!-- 管理画面へのログイン後の画面のレイアウトファイル -->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <meta lang='ja'>
-    <meta name="robots" content="noindex, nofollow">
-    <title><%= page_title(yield(:title), admin: true) %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>管理画面</title>
     <%= csrf_meta_tags %>
-    <!-- ここでadmin.scssを読み込む -->
-    <%= stylesheet_link_tag 'admin', media: 'all' %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   </head>
 
   <body class="hold-transition sidebar-mini">
-  <div class="wrapper">
+    <div class="wrapper">
+    
+      <%= render 'admin/shared/header' %>
+      <%= render 'admin/shared/sidebar' %>
 
-    <%= render 'admin/shared/header' %>
-    <%= render 'admin/shared/sidebar' %>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-    <%= render 'shared/flash_message' %>
-    <%= yield %> <!-- ここてindex.html.erbが読込み？ -->
+      <!-- Main content -->
+      <div class="content-wrapper">
+        <%= render 'shared/flash_message' %>
+        <%= yield %>
+      </div>
+      <!-- /.content-wrapper -->
+      <%= render 'admin/shared/footer' %>
     </div>
-    <!-- /.content-wrapper -->
-
-    <%= render 'admin/shared/footer' %>
-
-  </div>
-  <!-- #ここでadmin.jsを読み込む -->
-  <%= javascript_pack_tag 'admin' %>
   </body>
 </html>

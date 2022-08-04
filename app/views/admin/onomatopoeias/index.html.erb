@@ -1,0 +1,62 @@
+<%= javascript_pack_tag 'onomatopoeias/index' %>
+
+<!-- 上部 -->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>オノマトペ一覧情報</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><%= link_to 'home', admin_root_path %></li>
+          <li class="breadcrumb-item active">オノマトペー情報一覧</li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</div>
+
+<!-- テーブル -->
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="users_example" class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th style="width:5%;">No</th>
+                  <th style="width:20%;">Japanese notation</th>
+                  <th style="width:20%;">Korean notation</th>
+                  <th style="width:15%;"></th>
+                </tr>
+              </thead>
+            
+              <tbody>
+                <% @onomatopoeias.each do |onomatopoeia| %>
+                  <tr>
+                    <td><%= onomatopoeia.id %></td>
+                    <td><%= onomatopoeia.japanese_notation %></td>
+                    <td><%= onomatopoeia.korean_notation %></td>
+                    <td><%= link_to '詳細', admin_onomatopoeia_path(onomatopoeia), class:"btn btn-outline-primary btn-sm" %>
+                    <%= link_to '編集', edit_admin_onomatopoeia_path(onomatopoeia), class:"btn btn-outline-primary btn-sm" %>
+                    <%= link_to '削除', admin_onomatopoeia_path(onomatopoeia), method: :delete, class:"btn btn-outline-danger btn-sm", data: { confirm: '本当によろしいでしょうか？' } %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content -->

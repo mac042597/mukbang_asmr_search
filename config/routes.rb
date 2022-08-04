@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'onomatopoeias#index'
 
-  resources :onomatopoeias
+  resources :onomatopoeias, only: [:index]
   resources :users, only: [:new, :create]
   
   namespace :admin do
@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     get 'login', to: 'user_sessions#new'
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy'
+    resources :onomatopoeias
   end
 end
