@@ -1,0 +1,18 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h1><%= t '.title' %></h1>
+      <%= form_with(model: [ :admin, @category ]) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %> 
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="card-footer">
+          <%= f.submit (t 'defaults.register'), class: 'btn btn-primary' %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>

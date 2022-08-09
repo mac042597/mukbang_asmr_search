@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <%= category.id %>
+  </td>
+  <td>
+    <%= category.name %>
+  </td>
+  <td>
+    <%= l category.created_at, format: :long  %>
+  </td>
+  <td>
+    <%= link_to (t 'defaults.delete'), admin_category_path(category), class: "btn btn-danger", data: { confirm: t('defaults.message.delete_confirm') }, method: :delete %>
+  </td>
+</tr>
