@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy'
     resources :onomatopoeias
+    resources :foods
+    resources :categories, only: [:new, :create, :index, :destroy]
   end
 end
