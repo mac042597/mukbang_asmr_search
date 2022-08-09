@@ -1,2 +1,51 @@
 ja:
-    defaults:
+  defaults:
+    register: '登録'
+    detail: '詳細'
+    edit: '編集'
+    delete: '削除'
+    id: 'ID'
+    category: 'カテゴリー'
+    date: '登録日'
+    japanese_notation: '日本語表記'
+    korean_notation: '韓国語表記'
+  admin:
+    dashboards:
+      index:
+        title: 'ダッシュボード'
+    categories:
+      new:
+        title: 'カテゴリー登録'
+      index:
+        title: 'カテゴリー一覧'
+    foods:
+      edit:
+        title: '食べ物編集'
+      index:
+        title: '食べ物一覧'
+      new:
+        title: '食べ物登録'
+      show:
+        title: '食べ物詳細'
+    onomatopoeias:
+      edit:
+        title: 'オノマトペ編集'
+      index:
+        title: 'オノマトペ一覧'
+      new:
+        title: 'オノマトペ登録'
+      show:
+        title: 'オノマトペ詳細'
+    shared:
+      sidebar:
+        onomatopoeia: 'オノマトペ'
+        onomatopoeia_new: 'オノマトペ登録'
+        onomatopoeia_index: 'オノマトペ一覧'
+        food: '食べ物'
+        food_new: '食べ物登録'
+        food_index: '食べ物一覧'
+        category_new: 'カテゴリー登録'
+        category_index: 'カテゴリー一覧'
+
+      
+
