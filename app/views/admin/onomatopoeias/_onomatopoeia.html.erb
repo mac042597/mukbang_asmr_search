@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= onomatopoeia.id %>
+  </td>
+  <td>
+    <%= onomatopoeia.japanese_notation %>
+  </td>
+  <td>
+    <%= onomatopoeia.korean_notation %>
+  </td>
+  <td>
+    <%= l onomatopoeia.created_at, format: :long  %>
+  </td>
+  <td>
+    <%= link_to (t 'defaults.detail'), admin_onomatopoeia_path(onomatopoeia), class: "btn btn-info" %>
+    <%= link_to (t 'defaults.edit'),  edit_admin_onomatopoeia_path(onomatopoeia), class: "btn btn-success" %>
+    <%= link_to (t 'defaults.delete'), admin_onomatopoeia_path(onomatopoeia), class: "btn btn-danger", data: { confirm: t('defaults.message.delete_confirm') }, method: :delete %>
+  </td>
+</tr>
