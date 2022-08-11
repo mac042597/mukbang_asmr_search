@@ -6,9 +6,12 @@ ja:
     delete: '削除'
     id: 'ID'
     category: 'カテゴリー'
+    onomatopoeia: 'オノマトペ'
     date: '登録日'
     japanese_notation: '日本語表記'
     korean_notation: '韓国語表記'
+    message:
+      delete_confirm: '削除しますか？'
   admin:
     dashboards:
       index:
