@@ -11,8 +11,8 @@
 #
 class Food < ApplicationRecord
   has_many :onomatopoeia_foods
-  has_many :onomatopoeias, through: :onomatopoeia_foods
-  belogns_to :category
+  has_many :onomatopoeias, through: :onomatopoeia_foods, dependent: :destroy
+  belongs_to :category
 
   validates :japanese_notation, :korean_notation,  presence: true
 end
