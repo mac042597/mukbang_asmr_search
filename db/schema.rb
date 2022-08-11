@@ -30,12 +30,12 @@ ActiveRecord::Schema.define(version: 2022_07_21_125950) do
   end
 
   create_table "onomatopoeia_foods", force: :cascade do |t|
-    t.bigint "category_id", null: false
+    t.bigint "onomatopoeia_id", null: false
     t.bigint "food_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_onomatopoeia_foods_on_category_id"
     t.index ["food_id"], name: "index_onomatopoeia_foods_on_food_id"
+    t.index ["onomatopoeia_id"], name: "index_onomatopoeia_foods_on_onomatopoeia_id"
   end
 
   create_table "onomatopoeias", force: :cascade do |t|
@@ -56,6 +56,6 @@ ActiveRecord::Schema.define(version: 2022_07_21_125950) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "onomatopoeia_foods", "categories"
   add_foreign_key "onomatopoeia_foods", "foods"
+  add_foreign_key "onomatopoeia_foods", "onomatopoeias"
 end
