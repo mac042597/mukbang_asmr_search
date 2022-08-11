@@ -1,7 +1,7 @@
 <!-- サイドバー -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- サイトロゴ -->
-  <a href="index3.html" class="brand-link">
+  <a href="#" class="brand-link">
     <%= image_tag 'AdminLTELogo.png', class: 'brand-image img-circle elevation-3' %>
     <span class="brand-text font-weight-light">管理画面</span>
   </a>
@@ -16,7 +16,7 @@
           <a href="#" class="nav-link active">
             <i class="nav-icon far fa-file"></i>
             <p>
-              オノマトペ
+              <%= t '.onomatopoeia' %>
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -24,13 +24,13 @@
             <li class="nav-item">
               <%= link_to new_admin_onomatopoeia_path, class:"nav-link" do %>
                 <i class="far fa-circle nav-icon"></i>
-                <p>オノマトペ登録</p>
+                <%= t '.onomatopoeia_new' %>
               <% end %>
             </li>
             <li class="nav-item">
               <%= link_to admin_onomatopoeias_path, class:"nav-link" do %>
                 <i class="far fa-circle nav-icon"></i>
-                <p>オノマトペ一覧</p>
+                <p><%= t '.onomatopoeia_index' %></p>
               <% end %>
             </li>   
           </ul>
@@ -38,21 +38,35 @@
         <li class="nav-item has-treeview menu-open">
           <a href="#" class="nav-link active">
             <p>
-              食べ物
+              <%= t '.food' %>
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <%= link_to "#", class:"nav-link" do %>
+              <%= link_to new_admin_food_path, class:"nav-link" do %>
                 <i class="far fa-circle nav-icon"></i>
-                <p>食べ物登録</p>
+                <p><%= t '.food_new' %></p>
               <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to "#", class:"nav-link" do %>
+              <%= link_to admin_foods_path, class:"nav-link" do %>
                 <i class="far fa-circle nav-icon"></i>
-                <p>食べ物一覧</p>
+                <p><%= t '.food_index' %></p>
+              <% end %>
+            </li>   
+          </ul>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <%= link_to new_admin_category_path, class:"nav-link" do %>
+                <i class="far fa-circle nav-icon"></i>
+                <p><%= t '.category_new' %></p>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_categories_path, class:"nav-link" do %>
+                <i class="far fa-circle nav-icon"></i>
+                <p><%= t '.category_index' %></p>
               <% end %>
             </li>   
           </ul>

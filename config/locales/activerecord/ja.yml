@@ -1,6 +1,19 @@
 ja:
   activerecord:
     models:
+      category: 'カテゴリー'
+      food: '食べ物'
+      onomatopoeia: 'オノマトペ'
+    attributes:
+      category:
+        name: 'カテゴリー名'
+      food:
+        japanese_notation: '日本語表記'
+        korean_notation: '韓国語表記'
+        category_id: 'カテゴリー'
+      onomatopoeia:
+        japanese_notation: '日本語表記'
+        korean_notation: '韓国語表記'
   enums:
     user:
       role:

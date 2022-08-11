@@ -14,13 +14,14 @@
           <th scope="col"><%= t('defaults.id') %></th>
           <th scope="col"><%= t('defaults.japanese_notation') %></th>
           <th scope="col"><%= t('defaults.korean_notation') %></th>
+          <th scope="col"><%= t('defaults.category') %></th>
           <th scope="col"><%= t('defaults.date') %></th>
           <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
           <!-- 一覧表示 -->
-          <%= render @onomatopoeias %>
+          <%= render @foods %>
         </tbody>
       </table>
     </div>

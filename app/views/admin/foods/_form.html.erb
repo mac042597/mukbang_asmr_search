@@ -1,0 +1,24 @@
+<%= form_with(model: [ :admin, food ]) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %> 
+  <div class="form-group">
+    <%= f.label :japanese_notation %>
+    <%= f.text_field :japanese_notation, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :korean_notation  %>
+    <%= f.text_area :korean_notation, class: 'form-control' %> 
+  </div>
+  <%#= f.fields_for :onomatopoeia do |j| %>
+    <div class="form-group">
+      <%= f.label :onomatopoeia  %>
+      <%= f.collection_select :onomatopoeia_ids, Onomatopoeia.all, :id, :japanese_notation, include_blank: "選択して下さい", class: 'form-control' %> 
+    </div>
+  <%# end %>
+    <div class="form-group">
+    <%= f.label :category_id  %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: "選択して下さい", class: 'form-control' %> 
+  </div>
+  <div class="card-footer">
+    <%= f.submit (t 'defaults.register'), class: 'btn btn-primary' %>
+  </div>
+<% end %>

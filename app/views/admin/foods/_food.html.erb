@@ -1,0 +1,22 @@
+<tr>
+  <td>
+    <%= food.id %>
+  </td>
+  <td>
+    <%= food.japanese_notation %>
+  </td>
+  <td>
+    <%= food.korean_notation %>
+  </td>
+    <td>
+    <%= food.category.name %>
+  </td>
+  <td>
+    <%= l food.created_at, format: :long  %>
+  </td>
+  <td>
+    <%= link_to (t 'defaults.detail'), admin_food_path(food), class: "btn btn-info" %>
+    <%= link_to (t 'defaults.edit'),  edit_admin_food_path(food), class: "btn btn-success" %>
+    <%= link_to (t 'defaults.delete'), admin_food_path(food), class: "btn btn-danger", data: { confirm: t('defaults.message.delete_confirm') }, method: :delete %>
+  </td>
+</tr>

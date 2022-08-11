@@ -1,6 +1,6 @@
-class Admin::OnomatopoeiasController < ApplicationController
+class Admin::OnomatopoeiasController < Admin::BaseController
 
-  before_action :set_nomatopoeia, only: %i[show edit update destroy]
+  before_action :set_onomatopoeia, only: %i[show edit update destroy]
 
   def index
     @onomatopoeias = Onomatopoeia.all.order(created_at: :desc)
@@ -19,20 +19,19 @@ class Admin::OnomatopoeiasController < ApplicationController
     if @onomatopoeia.save
       redirect_to admin_onomatopoeias_path, success: "オノマトペを登録しました"
     else
-      flash.now[:danger] = "登録に失敗しました"
+      flash.now[:danger] = "オノマトペの登録に失敗しました"
       render :new
     end
   end
-
 
   def edit
   end
   
   def update
-    if  @onomatopoeia.update(onomatopoeia_params)
+    if @onomatopoeia.update(onomatopoeia_params)
       redirect_to admin_onomatopoeia_path(@onomatopoeia), success: "オノマトペを更新しました"
     else
-      flash.now[:danger] = "登録に失敗しました"
+      flash.now[:danger] = "オノマトペの更新に失敗しました"
       render :edit
     end
   end
@@ -44,7 +43,7 @@ class Admin::OnomatopoeiasController < ApplicationController
 
   private
 
-  def set_nomatopoeia
+  def set_onomatopoeia
     @onomatopoeia = Onomatopoeia.find(params[:id])
   end
 
