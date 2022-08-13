@@ -39,3 +39,6 @@ yarn-debug.log*
 /vendor
 /config/database.yml
 /public/uploads
+# herokuデプロイのため除外
+/node_modules
+lib/
