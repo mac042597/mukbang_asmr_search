@@ -12,6 +12,7 @@
     "@vue/compiler-sfc": "^3.2.37",
     "admin-lte": "^3.0",
     "autoprefixer": "^9",
+    "daisyui": "^2.24.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "postcss": "^7",
@@ -27,8 +28,8 @@
     "webpack-dev-server": "^3"
   },
   "engines": {
-    "node": "15.14.0",
+    "node": "16.16.0",
     "npm": "7.7.6",
-    "yarn": "1.22.19"
+    "yarn": "1.22.17"
   }
 }
