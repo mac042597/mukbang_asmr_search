@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'onomatopoeias#index'
+  root to: 'top#index'
 
   resources :onomatopoeias, only: [:index]
   resources :users, only: [:new, :create]
