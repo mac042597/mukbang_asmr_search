@@ -6,11 +6,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Inter font family -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= render 'shared/header' %>
+    <!-- Main content -->
     <%= yield %>
+    <%= render 'shared/footer' %>
   </body>
 </html>
