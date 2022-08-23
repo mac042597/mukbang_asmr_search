@@ -1,18 +1,20 @@
 <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="text-center mb-20">
+  <div class="container px-5 pt-12 pb-2 mx-auto">
+    <div class="text-center mb-8">
       <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">聴きたい音から検索</h1>
       <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">オノマトペ（擬音語）から動画を検索してみませんか・・？</p>
     </div>
-    <% @onomatopoeias.each do |onomatopoeia| %>
-      <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-        <button class="text-center p-2 sm:w-1/2 w-full">
-          <div class="bg-gray-100 rounded flex p-4 h-full items-center">
-            <span class="title-font font-medium"><%= onomatopoeia.japanese_notation %></span>
-          </div>
-        </button>
-      </div>
-    <% end %>
-    <button class="flex mx-auto mt-16 text-white bg-gray-400 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">⇦ back to top</button>
   </div>
+</section>
+
+<section>
+  <div class="container pt-0 pb-2 mx-auto">
+    <% if @onomatopoeias.present? %>
+      <%= render @onomatopoeias %>
+    <% else %>
+      <p><%= t '.no_onomatopoeias' %></p>
+    <% end %>
+  </div>
+  
+  <button class="flex mx-auto mt-16 text-white bg-gray-300 border-0 py-2 px-8 focus:outline-none hover:bg-gray-500 rounded text-lg">⇦ back to top</button>
 </section>
