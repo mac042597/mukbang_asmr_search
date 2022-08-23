@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'top#index'
 
   resources :onomatopoeias, only: [:index]
+  resources :foods, only: [:index]
   resources :users, only: [:new, :create]
   
   namespace :admin do
