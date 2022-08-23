@@ -1,18 +1,18 @@
 <section class="text-gray-600 body-font">
   <div class="container px-5 pt-12 pb-2 mx-auto">
     <div class="text-center mb-8">
-      <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">聴きたい音から検索</h1>
-      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">オノマトペ（擬音語）から動画を検索してみませんか・・？</p>
+      <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">見たい食べ物から検索</h1>
+      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">見たい食べ物から動画を検索してみませんか・・？</p>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container pt-0 pb-2 mx-auto">
-    <% if @onomatopoeias.present? %>
-      <%= render @onomatopoeias %>
+    <% if @foods.present? %>
+      <%= render @foods %>
     <% else %>
-      <p><%= t '.no_onomatopoeias' %></p>
+      <p><%= t '.no_foods' %></p>
     <% end %>
   </div>
   

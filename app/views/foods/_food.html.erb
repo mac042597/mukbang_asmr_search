@@ -1,7 +1,7 @@
 <!-- button -->
 <div class="flex justify-center mx-autoitems-center w-auto lg:w-4/5 my-2">
   <button id="open" class="text-center p-2 sm:w-1/2 w-full bg-gray-100 rounded hover:bg-gray-300">
-    <p class="title-font font-semibold text-center"><%= onomatopoeia.japanese_notation %></p>
+    <p class="title-font font-semibold text-center"><%= food.japanese_notation %></p>
   </button>
 </div>
 <!-- /.button -->
@@ -16,8 +16,8 @@
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <!--- modal中身 -->
           <div class="flex flex-col mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-            <button class="text-center my-2 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">日本語表記(<%= onomatopoeia.japanese_notation %>)で探す</button>
-            <button class="text-center my-2 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">韓国語表記(<%= onomatopoeia.korean_notation %>)で探す</button>
+            <button class="text-center my-2 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">日本語表記(<%= food.japanese_notation %>)で探す</button>
+            <button class="text-center my-2 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">韓国語表記(<%= food.korean_notation %>)で探す</button>
           </div>
           <!--- /.modal中身 -->
         </div>
