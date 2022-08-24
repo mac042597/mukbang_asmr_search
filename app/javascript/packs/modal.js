@@ -1,21 +1,18 @@
 'use strict';
 
 {
-  window.addEventListener('load', function(){
+  window.addEventListener('turbolinks:load', function(){
 
-    const open = document.getElementById('open');
-    const overlay = document.getElementById('overlay');
-    const modal_open = document.getElementById('modal-open');
-    const close = document.getElementById('close');
-
-    open.addEventListener('click', () => {
-      overlay.classList.remove('hidden');
-      modal_open.classList.remove('hidden');
+  $('.current_nav_icon').click(function () { 
+    var target = $(this).data('modalLink');
+    //変数targetにクリックしたメニューボタンの
+    //data-modal-linkというカスタムデータクラスに入っている投稿のidを入れる
+    $('[data-modal-content = ' + target + ']').fadeIn();
     });
-
-    close.addEventListener('click', () => {
-      overlay.classList.add('hidden');
-      modal_open.classList.add('hidden');
+    
+    $('.close-menu').click(function () {
+    $('.current_action_nav').fadeOut();
+    //クローズボタンをクリックして、フェードインしたものをフェードアウトで消す
     });
   })
 }
