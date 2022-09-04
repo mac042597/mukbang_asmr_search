@@ -1,0 +1,2 @@
+module OnomatopoeiaSearchesHelper
+end
