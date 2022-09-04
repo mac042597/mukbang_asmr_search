@@ -42,3 +42,5 @@ yarn-debug.log*
 # herokuデプロイのため除外
 /node_modules
 lib/
+
+/.env
