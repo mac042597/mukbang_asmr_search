@@ -1,20 +1,29 @@
-<section class="text-gray-600 body-font">
-  <div class="container px-5 pt-12 pb-2 mx-auto">
-    <div class="text-center mb-8">
-      <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">聴きたい音から検索</h1>
-      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">オノマトペ（擬音語）から動画を検索してみませんか・・？</p>
+<div class="mt-24">
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 pt-12 pb-2 mx-auto">
+      <div class="text-center mb-8">
+        <h1 class="sm:text-3xl text-2xl font-medium text-center font-kosugi text-stone700 mb-4">聴きたい音から検索</h1>
+        <p class="font-kosugi text-stone700 text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">オノマトペ（擬音語）から動画を検索してみませんか・・？</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container pt-0 pb-2 mx-auto">
-    <% if @onomatopoeias.present? %>
-      <%= render @onomatopoeias %>
-    <% else %>
-      <p><%= t '.no_onomatopoeias' %></p>
-    <% end %>
-  </div>
-  
-  <button class="flex mx-auto mt-16 text-white bg-gray-300 border-0 py-2 px-8 focus:outline-none hover:bg-gray-500 rounded text-lg">⇦ back to top</button>
-</section>
+  <section>
+    <div class="container px-5 py-2 mx-auto">
+      <% if @onomatopoeias.present? %>
+        <%= render @onomatopoeias %>
+      <% end %>
+    </div>
+
+    <div class="flex justify-center items-center my-4">
+      <%= link_to root_path do%>
+        <button class="inline-flex items-center h-10 px-5 text-grayishwall font-mplus transition-colors duration-150 bg-simplegray rounded-lg focus:shadow-outline hover:bg-zinc400 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+          </svg>
+          <span> Back Page </span>
+        </button>
+      <% end %>
+    </div>
+  </section>
+</div>

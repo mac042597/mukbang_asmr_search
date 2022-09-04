@@ -1,26 +1,32 @@
 <!-- button -->
-<div class="flex justify-center mx-autoitems-center w-auto lg:w-4/5 my-2">
-  <button class="current_nav_icon text-center p-2 sm:w-1/2 w-full bg-gray-100 rounded hover:bg-gray-300" data-modal-link="<%= food.id %>">
-    <p class="title-font font-semibold text-center"><%= food.japanese_notation %></p>
-  </button>
-</div>
+<section class="text-gray-600 body-font">
+  <div class="container px-5 mx-auto">
+    <div class="flex items-center lg:w-3/5 mx-auto pb-5 border-gray-200 sm:flex-row flex-col">
+        <button class="current_nav_icon flex-grow sm:text-left mt-6 sm:mt-0 p-2 sm:w-1/2 w-full h-16 text-stone700 bg-bluegray rounded hover:bg-darkbluegray hover:text-grayishwall" data-modal-link="<%= food.id %>">
+          <p class="font-kosugi font-semibold text-xl text-center"><%= food.japanese_notation %></p>
+        </button>
+    </div>
+  </div>
+</section>
 <!-- /.button -->
 <!-- modal -->
 <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <!-- open -->
   <div class="current_action_nav hidden fixed z-10 inset-0 overflow-y-auto" data-modal-content="<%= food.id %>">
-    <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
-      <div class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
-        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+    <div class="fixed inset-0 bg-grayishwall bg-opacity-75 transition-opacity"></div>
+    <div class="flex items-center sm:items-center justify-center min-h-full p-4 sm:p-0">
+      <div class="relative bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
+        <div class="flex justify-center bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 rounded-lg border-solid border-2 border-slate-500">
           <!--- modal中身 -->
           <div class="flex flex-col mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-            <button class="text-center my-2 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">日本語表記(<%= food.japanese_notation %>)で探す</button>
-            <button class="text-center my-2 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">韓国語表記(<%= food.korean_notation %>)で探す</button>
+            <%= button_to "日本語（#{food.japanese_notation}）で探す", {controller: 'food_searches', action: 'japanese_movies'}, {method: :get, class: "rounded-full text-center my-2 w-64 bg-white hover:bg-bluegray text-stone700 font-kosugi font-semibold hover:text-white py-2 px-4 border border-bluegray rounded", params: {japanese_notation: food.japanese_notation}} %>
+            <%= button_to "韓国語（#{food.korean_notation}）で探す", {controller: 'food_searches', action: 'korean_movies'}, {method: :get, class: "rounded-full text-center my-2 w-64 bg-white hover:bg-bluegray text-stone700 font-kosugi font-semibold hover:text-white py-2 px-4 border border-bluegray rounded", params: {korean_notation: food.korean_notation}} %>
           </div>
           <!--- /.modal中身 -->
         </div>
         <!-- close -->
-        <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-          <button class="close-menu mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Close</button>
+        <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse rounded-lg">
+          <button class="close-menu mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white font-zenmaru text-base font-medium text-stone700 hover:bg-bluegray hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-darkbluegray sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Close</button>
         </div>
         <!-- /.close -->
       </div>
