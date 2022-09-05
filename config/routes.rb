@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   resources :onomatopoeias, only: [:index]
   resources :foods, only: [:index]
   resources :users, only: [:new, :create]
-  
+
+  get 'search_japanese', to: 'onomatopoeia_searches#japanese_movies'
+  get 'search_korean', to: 'onomatopoeia_searches#korean_movies'
+  get 'search_japanese', to: 'food_searches#japanese_movies'
+  get 'search_korean', to: 'food_searches#korean_movies'
+
   namespace :admin do
     root to: 'dashboards#index'
     get 'login', to: 'user_sessions#new'

@@ -7,12 +7,37 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        zenmaru: ['Zen Maru Gothic', 'sans-serif'],
+        sawarabi: ['Sawarabi Mincho', 'serif'],
+        mplus: ['M PLUS 1p', 'sans-serif'],
+        kosugi: ['Kosugi Maru', 'sans-serif'],
+      },
+      height: {
+        '15': '3.75rem',
+      },
+      colors: {
+        stone300: '#d6d3d1',
+        stone400: '#a8a29e',
+        stone50: '#fafaf9',
+        stone100: '#f5f5f4',
+        stone700: '#44403c',
+        zinc300: '#d4d4d8',
+        zinc400: '#a1a1aa',
+        grayishwall: '#e3e6e1',
+        simplegray: '#aeafaf',
+        bluegray: '#b7c6c7',
+        darkbluegray: '#4b5f65',
+        warmgray: '#ceccb8',
+        
+
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp'),
+  ],
 }
