@@ -26,7 +26,6 @@
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
-shared/config/master.key
 /config/master.key
 
 /public/packs
