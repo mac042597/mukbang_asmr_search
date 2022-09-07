@@ -1,22 +1,24 @@
-<div class="fixed top-0 w-screen z-50 bg-simplegray text-grayishwall">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+<div class="fixed top-0 w-screen z-50 bg-blackpanther text-calm">
+  <div class="container mx-auto flex flex-wrap p-5 sm:flex-row items-center">
     <div class="flex space-x-4 justify-start">
       <%= link_to image_tag("loupe_hand_mono.png", class: "h-8 sm:h-10"), root_path %>
-      <span class="self-center text-xl text-grayishwall font-mono text-stone100 whitespace-nowrap">Muksearch</span>
+      <span class="self-center text-xl text-calm font-mono whitespace-nowrap">Muksearch</span>
     </div>
-    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-stone100	flex flex-wrap items-center text-base justify-center">
-      <%= link_to "#", class: "mr-5 hover:text-stone700" do %>
+    <nav class="sm:mr-auto ml-4 sm:ml-4 sm:py-1 pl-4 sm:pl-4 border-l border-clam	flex flex-wrap items-center text-base justify-center">
+      <%= link_to about_path, class: "mr-5 hover:text-stone700" do %>
         <p>About</p>
       <% end %>
       <%= link_to "#", class: "mr-5 hover:text-stone700" do %>
         <p>Request</p>
       <% end %>
     </nav>
-    <button class="inline-flex items-center text-stone700 bg-grayishwall border-0 py-1 px-3 focus:outline-none hover:bg-zinc300 rounded text-base mt-4 md:mt-0">Top
-      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-        <path d="M5 12h14M12 5l7 7-7 7"></path>
-      </svg>
-    </button>
+    <%= link_to root_path do %>
+      <button class="inline-flex items-center text-blackpanther bg-calm border-0 py-1 px-3 focus:outline-none hover:bg-applecrisp rounded text-base ">Top
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    <% end %>
   </div>
 </div>
 
