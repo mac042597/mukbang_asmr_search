@@ -19,7 +19,7 @@ module.exports = {
         stone300: '#d6d3d1',
         stone400: '#a8a29e',
         stone50: '#fafaf9',
-        stone100: '#f5f5f4',
+        stone500: '#78716c',
         stone700: '#44403c',
         zinc300: '#d4d4d8',
         zinc400: '#a1a1aa',
@@ -28,8 +28,9 @@ module.exports = {
         bluegray: '#b7c6c7',
         darkbluegray: '#4b5f65',
         warmgray: '#ceccb8',
-        
-
+        blackpanther: '#332627',
+        calm: '#EEE9D4',
+        applecrisp: '#BB9861',
       },
     },
   },

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :onomatopoeias, only: [:index]
   resources :foods, only: [:index]
   resources :users, only: [:new, :create]
+  get 'about', to: 'top#about' 
 
   get 'search_japanese', to: 'onomatopoeia_searches#japanese_movies'
   get 'search_korean', to: 'onomatopoeia_searches#korean_movies'
