@@ -18,8 +18,8 @@
               <p>検索したい言語を選択</p>
             </div>
             <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-              <%= button_to "日本語（#{onomatopoeia.japanese_notation}）で探す", {controller: 'onomatopoeia_searches', action: 'japanese_movies'}, {method: :get, class: "rounded-full text-center mt-4 mb-2 w-64 bg-white hover:bg-blackpanther text-blackpanther hover:text-calm font-kosugi font-semibold py-2 px-4 border border-applecrisp rounded", params: {japanese_notation: onomatopoeia.japanese_notation}} %>
-              <%= button_to "韓国語（#{onomatopoeia.korean_notation}）で探す", {controller: 'onomatopoeia_searches', action: 'korean_movies'}, {method: :get, class: "rounded-full text-center my-2 w-64 bg-white hover:bg-blackpanther text-blackpanther hover:text-calm font-kosugi font-semibold py-2 px-4 border border-applecrisp rounded", params: {korean_notation: onomatopoeia.korean_notation}} %>
+              <%= button_to "日本語（#{onomatopoeia.japanese_notation}）で探す", {controller: 'searches', action: 'index'}, {method: :get, class: "rounded-full text-center mt-4 mb-2 w-64 bg-white hover:bg-blackpanther text-blackpanther hover:text-calm font-kosugi font-semibold py-2 px-4 border border-applecrisp rounded", params: {japanese_notation: onomatopoeia.japanese_notation}} %>
+              <%= button_to "韓国語（#{onomatopoeia.korean_notation}）で探す", {controller: 'searches', action: 'index'}, {method: :get, class: "rounded-full text-center my-2 w-64 bg-white hover:bg-blackpanther text-blackpanther hover:text-calm font-kosugi font-semibold py-2 px-4 border border-applecrisp rounded", params: {korean_notation: onomatopoeia.korean_notation}} %>
             </div>
           </div>
         </div>
