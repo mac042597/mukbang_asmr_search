@@ -2,16 +2,13 @@ class SearchesController < ApplicationController
   include Youtube
 
   def index
-    if params[:japanese_notation]
-      japanese_notation = params[:japanese_notation]
-      @keyword = japanese_notation + " " + "モッパン"
-      @movies = search_movie(@keyword)
-    elsif params[:korean_notation]
-      korean_notation = params[:korean_notation]
-      @keyword = korean_notation + " " + "먹방"
-      @movies = search_movie(@keyword)
+    search_word = params[:lang]
+    #binding.pry
+    if search_word.match(/\A[ぁ-んァ-ヶー－]+\z/)
+      @keyword = search_word + " " + "モッパン"
     else
-      render "onomatopoeias/index"
+      @keyword = search_word + " " + "먹방"
     end
+    @movies = search_movie(@keyword)
   end
 end
