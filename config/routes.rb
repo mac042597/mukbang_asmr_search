@@ -6,10 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   get 'about', to: 'top#about' 
 
-  get 'search_japanese', to: 'onomatopoeia_searches#japanese_movies'
-  get 'search_korean', to: 'onomatopoeia_searches#korean_movies'
-  get 'search_japanese', to: 'food_searches#japanese_movies'
-  get 'search_korean', to: 'food_searches#korean_movies'
+  get 'index', to: 'searches#index'
 
   namespace :admin do
     root to: 'dashboards#index'

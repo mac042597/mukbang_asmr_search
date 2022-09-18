@@ -12,9 +12,7 @@
     <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
 
-    <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   </head>
 
@@ -24,12 +22,11 @@
       <%= render 'admin/shared/header' %>
       <%= render 'admin/shared/sidebar' %>
 
-      <!-- Main content -->
       <div class="content-wrapper">
         <%= render 'shared/flash_message' %>
         <%= yield %>
       </div>
-      <!-- /.content-wrapper -->
+
       <%= render 'admin/shared/footer' %>
     </div>
   </body>
