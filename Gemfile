@@ -54,12 +54,9 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  # デバック
   gem 'better_errors'
   gem 'binding_of_caller'
-  # N+1問題が発生している箇所があったら教えてくれる
   gem 'bullet'
-  # 各モデルのスキーマ情報をファイルにコメントとして書き出してくれる
   gem 'annotate'
 end
 
@@ -72,7 +69,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'sorcery', '0.16.2'
-# sorceryをインストールした際にoauth2をアップデートしてくださいと表示があった為インストール
 gem 'oauth2', '~> 1.0'
 gem 'rails-i18n', '~> 6.0'
 gem 'enum_help'
