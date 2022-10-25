@@ -3,9 +3,9 @@ class SearchesController < ApplicationController
 
   def index
     if params[:group] == "1"
-      OnomatopoeiaClick.create(onomatopoeia_id: params[:id])  
+      OnomatopoeiaClick.create(onomatopoeia_id: params[:id])
     else
-      FoodClick.create(food_id: params[:id])  
+      FoodClick.create(food_id: params[:id])
     end
 
     search_word = params[:lang]
