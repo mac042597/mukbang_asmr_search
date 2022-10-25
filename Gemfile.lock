@@ -163,6 +163,8 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     memoist (0.16.2)
+    meta-tags (2.18.0)
+      actionpack (>= 3.2.0, < 7.1)
     method_source (1.0.0)
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
@@ -389,6 +391,7 @@ DEPENDENCIES
   google-api-client (~> 0.11)
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  meta-tags
   net-imap
   net-pop
   net-smtp
