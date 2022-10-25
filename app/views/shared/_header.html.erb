@@ -1,24 +1,25 @@
-<div class="fixed top-0 w-screen z-50 bg-blackpanther text-calm">
-  <div class="container mx-auto flex flex-wrap p-5 sm:flex-row items-center">
+<div class="fixed top-0 w-screen z-50 bg-white text-blackpanther border-b-2 border-yellow-200">
+  <div class="container flex flex-wrap p-5 sm:flex-row items-center">
     <div class="flex space-x-4 justify-start">
       <%= link_to image_tag("loupe_hand_mono.png", class: "h-8 sm:h-10"), root_path %>
-      <span class="self-center text-base sm:text-xl text-calm font-mono whitespace-nowrap">Muksearch</span>
+      <span class="self-center text-base sm:text-xl text-blackpanther font-mono whitespace-nowrap">Muksearch</span>
     </div>
-    <nav class="flex flex-wrap items-center justify-center text-sm sm:text-base sm:mr-auto ml-2 sm:ml-4 sm:py-1 pl-2 sm:pl-4 border-l border-clam">
+    <div class="flex flex-wrap items-center justify-center font-mplus text-sm sm:text-base sm:mr-auto ml-2 sm:ml-4 sm:py-1 pl-2 sm:pl-4 border-l border-blackpanther">
       <%= link_to about_path, class: "mr-5 hover:text-stone700" do %>
         <p>About</p>
       <% end %>
-      <%= link_to "#", class: "mr-5 hover:text-stone700" do %>
-        <p>Request</p>
+    </div>
+    <div class="absolute top-6 right-5">
+      <%= link_to root_path do %>
+        <button class="inline-flex items-center font-mplus text-sm sm:text-base text-blackpanther py-1 px-2 sm:px-3"> 
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+          </svg>
+          Top
+        </button>
       <% end %>
-    </nav>
-    <%= link_to root_path do %>
-      <button class="inline-flex items-center text-sm sm:text-base text-blackpanther bg-calm py-1 px-2 sm:px-3 focus:outline-none hover:bg-applecrisp rounded">Top
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-          <path d="M5 12h14M12 5l7 7-7 7"></path>
-        </svg>
-      </button>
-    <% end %>
+    </div>
   </div>
 </div>
+
 

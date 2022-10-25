@@ -1,0 +1,21 @@
+<div class="grid lg:grid-cols-9 sm:grid-cols-5 grid-cols-1 grid-rows-none gap-6 mx-10 content-center">
+  <% onomatopoeia_lanks.each.with_index(1) do |onomatopoeia, i| %>
+    <div class="relative bg-gray-100 lg:col-span-3 sm:col-start-2 sm:col-span-3 md:h-20 sm:h-16 h-14 shadow-md">
+      <button class="absolute inset-0 current_nav_icon md:h-20 sm:h-16 h-14 w-full text-blackpanther decoration-double hover:bg-gray-200" data-modal-link="<%= onomatopoeia.id %>">
+        <div class="absolute md:inset-4 sm:inset-3 xs:inset-2 inset-3 xl:left-20 lg:left-11 md:left-20 sm:left-12 xs:left-24 left-14">  
+          <% if i == 1 %>
+            <%= image_tag 'No1_icon.png', class: "md:h-12 xs:h-10 h-8 aspect-auto" %>
+          <% end %>
+          <% if i == 2 %>
+            <%= image_tag 'No2_icon.png', class: "md:h-12 xs:h-10 h-8 aspect-auto" %>
+          <% end %>
+          <% if i == 3 %>
+            <%= image_tag 'No3_icon.png', class: "md:h-12 xs:h-10 h-8 aspect-auto" %>
+          <% end %>
+        </div>
+        <p class="font-mplus lg:text-xl md:text-lg text-base"><%= onomatopoeia.japanese_notation %></p>
+      </button>
+    </div>
+    <%= render 'modal', onomatopoeia: onomatopoeia %>
+  <% end %>
+</div>
