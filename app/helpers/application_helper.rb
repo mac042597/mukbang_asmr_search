@@ -29,7 +29,7 @@ module ApplicationHelper
       ],
       og: {
         site_name: 'Muksearch',
-        title: 'わずか4クリックでモッパン動画が検索できるサービスです',
+        title: '数クリックでモッパン動画が検索できるサービス',
         description: 'わずか4クリックでモッパン動画の検索ができるサービスです。日本語＆韓国で検索できるから、沢山の動画を手軽に楽しむことができます！', 
         type: 'website',
         url: request.original_url,
