@@ -40,7 +40,6 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'rspec-rails'
-  # デバック
   gem 'pry-rails'
   gem 'pry-byebug'
 end
