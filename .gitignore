@@ -44,4 +44,3 @@ yarn-debug.log*
 lib/
 
 /.env
-/db/seeds.rb
