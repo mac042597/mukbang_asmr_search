@@ -1,0 +1,27 @@
+<div class="mt-24">
+  <div class="bg-grey-lighter min-h-screen flex flex-col">
+    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+      <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+        <h1 class="mb-8 text-3xl text-center">Sign up</h1>
+        <%= form_with model: @user, local: true, class: "w-full max-w-sm" do |f| %>
+          <%= f.email_field :email, class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "メールアドレス" %>
+          <%= f.text_field :name, class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "ニックネーム" %>
+          <%= f.password_field :password, class: 'block border border-grey-light w-full p-3 rounded mb-4',placeholder: "パスワード" %>
+          <%= f.password_field :password_confirmation, class: 'block border border-grey-light w-full p-3 rounded mb-4',placeholder: "パスワード(確認用)" %>
+
+          <button
+              type="submit"
+              class="w-full text-center py-3 rounded bg-gray-100 text-black hover:bg-green-dark focus:outline-none my-1"
+          >Create Account</button>
+
+          <div class="text-grey-dark mt-6">
+              <p>すでにアカウントをお持ちですか？</p>
+              <%= link_to login_path, class: "no-underline border-b border-blue text-blue" do %>
+                ログイン
+              <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

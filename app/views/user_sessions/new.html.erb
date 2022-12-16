@@ -1,0 +1,30 @@
+<div class="mt-24">
+  <div class="bg-grey-lighter min-h-screen flex flex-col">
+    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+      <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+        <h1 class="mb-8 text-3xl text-center">Login</h1>
+        <%= form_with url: login_path, local: true, class: "w-full max-w-sm" do |f| %>
+          <%= f.email_field :email, class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "メールアドレス" %>
+          <%= f.password_field :password, class: 'block border border-grey-light w-full p-3 rounded mb-4',placeholder: "パスワード" %>
+
+          <div class="flex items-center justify-between">
+            <button
+                type="submit"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >Login</button>
+
+            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+              Forgot Password?
+            </a>
+          </div>
+          <div class="text-grey-dark mt-6">
+              <p>登録がまだの方</p>
+              <%= link_to new_user_path, class: "no-underline border-b border-blue text-blue" do %>
+                新規登録
+              <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
