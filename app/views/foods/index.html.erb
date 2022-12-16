@@ -3,12 +3,19 @@
     <div class="container mx-auto">
       <div class="text-center mb-8">
         <h1 class="lg:text-3xl text-2xl text-center text-blackpanther font-udpmincho mb-4">見たい食べ物から検索</h1>
-        <p class="font-mplus sm:text-base text-sm text-blackpanther">気になる食べ物をクリック</p>
+        <p class="font-mplus sm:text-base text-sm text-blackpanther">気になる単語で検索してみる</p>
+        <%= form_with url: index_path, method: :get, local: true, class: "w-full max-w-sm" do |form| %>
+          <div class="flex justify-center border-b border-teal-500 py-2">
+            <%= form.text_field :lang, placeholder: "フリーワード検索 例)お餅 or 떡", class: "appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"  %>
+            <%= form.submit "検索", class: "flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </section>
 
   <section class="mt-20">
+    <p class="font-mplus sm:text-base text-sm text-blackpanther">気になる食べ物をクリック</p>
     <p class="mb-2 lg:text-sm text-xs text-center text-stone500 font-udpmincho underline">RANKING</p>
     <h1 class="mb-10 lg:text-3xl text-2xl text-center text-blackpanther font-udpmincho">月間ランキング</h1>
     <div class="container mx-auto">
