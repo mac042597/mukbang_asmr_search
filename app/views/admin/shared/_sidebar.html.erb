@@ -66,6 +66,21 @@
               <% end %>
             </li>   
           </ul>
+          <li class="nav-item has-treeview menu-open">
+          <a href="#" class="nav-link active">
+            <p>
+              <%= t '.user' %>
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <%= link_to admin_users_path, class:"nav-link" do %>
+                <i class="far fa-circle nav-icon"></i>
+                <p><%= t '.user_index' %></p>
+              <% end %>
+            </li>   
+          </ul>
         </li>
       </ul>
     </nav>
