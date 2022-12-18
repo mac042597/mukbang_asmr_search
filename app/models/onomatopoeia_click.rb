@@ -8,5 +8,6 @@
 #  onomatopoeia_id :integer          not null
 #
 class OnomatopoeiaClick < ApplicationRecord
+  belongs_to :onomatopoeia
   validates :onomatopoeia_id,  presence: true
 end

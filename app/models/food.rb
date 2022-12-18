@@ -22,6 +22,7 @@
 class Food < ApplicationRecord
   belongs_to :category
   belongs_to :user
+  has_many :food_click, dependent: :destroy
 
   validates :japanese_notation, :korean_notation, presence: true
   validates :japanese_notation, :korean_notation, uniqueness: true

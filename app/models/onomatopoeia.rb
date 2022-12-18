@@ -20,6 +20,7 @@
 #
 class Onomatopoeia < ApplicationRecord
   belongs_to :user
+  has_many :onomatopoeia_click, dependent: :destroy
 
   # 指定された属性が空（empty）でないことを確認
   validates :japanese_notation, :korean_notation, presence: true
