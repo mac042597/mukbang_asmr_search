@@ -8,10 +8,6 @@
     <%= f.label :korean_notation  %>
     <%= f.text_area :korean_notation, class: 'form-control' %> 
   </div>
-    <div class="form-group">
-      <%= f.label :onomatopoeia  %>
-      <%= f.collection_select :onomatopoeia_ids, Onomatopoeia.all, :id, :japanese_notation, include_blank: "選択して下さい", class: 'form-control' %> 
-    </div>
   <div class="form-group">
     <%= f.label :category_id  %>
     <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: "選択して下さい", class: 'form-control' %> 

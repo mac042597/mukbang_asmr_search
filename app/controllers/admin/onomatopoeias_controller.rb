@@ -14,8 +14,8 @@ class Admin::OnomatopoeiasController < Admin::BaseController
   end
 
   def create
-    @onomatopoeia = Onomatopoeia.new(onomatopoeia_params)
-
+    @onomatopoeia = current_user.onomatopoeias.build(onomatopoeia_params)
+    
     if @onomatopoeia.save
       redirect_to admin_onomatopoeias_path, success: "オノマトペを登録しました"
     else

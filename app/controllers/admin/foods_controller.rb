@@ -18,8 +18,8 @@ class Admin::FoodsController < Admin::BaseController
   end
 
   def create
-    @food = Food.new(food_params)
-    #binding.pry
+    @food = current_user.foods.build(food_params)
+
     if @food.save
       redirect_to admin_foods_path, success: "食べ物を登録しました"
     else
