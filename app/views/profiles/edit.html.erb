@@ -4,6 +4,7 @@
       <div class="bg-white px-6 py-8 rounded shadow-md text-blackpanther w-full">
         <h1 class="mb-8 xs:text-3xl text-xl font-mplus text-center">登録情報変更</h1>
         <%= form_with model: @user, url: profiles_path, local: true, class: "w-full max-w-sm" do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
           <%= f.email_field :email, class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "メールアドレス" %>
           <%= f.text_field :name, class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "ニックネーム" %>
 

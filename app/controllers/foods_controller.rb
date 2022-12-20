@@ -11,13 +11,12 @@ class FoodsController < ApplicationController
   end
 
   def create
-    #binding.pry
     @food = current_user.foods.build(food_params)
     
     if @food.save
-      redirect_to foods_path, success: "食べ物を登録しました"
+      redirect_to foods_path, notice: "食べ物を登録しました"
     else
-      flash.now[:danger] = "食べ物の登録に失敗しました"
+      flash.now[:alert] = "食べ物の登録に失敗しました"
       render :index
     end
   end
@@ -27,7 +26,7 @@ class FoodsController < ApplicationController
   
   def update
     if @food.update(food_params)
-      redirect_to profiles_path, success: "食べ物を更新しました"
+      redirect_to profiles_path, notice: "食べ物を更新しました"
     else
       flash.now[:danger] = "食べ物の登録に失敗しました"
       render :edit
@@ -36,7 +35,7 @@ class FoodsController < ApplicationController
 
   def destroy
     @food.destroy!
-    redirect_to profiles_path, success: "食べ物を削除しました"
+    redirect_to profiles_path, notice: "食べ物を削除しました"
   end
 
   private

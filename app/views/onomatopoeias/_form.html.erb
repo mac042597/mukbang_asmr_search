@@ -1,6 +1,7 @@
 <div class="block p-6 mx-auto rounded-lg shadow-lg bg-white max-w-sm">
 <h1 class="mb-8 xs:text-3xl text-xl font-mplus text-blackpanther text-center">聞きたい音編集</h1>
   <%= form_with model: onomatopoeia do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
     <div class="form-group mb-6">
       <%= f.label :japanese_notation, class: "form-label inline-block mb-2 ext-blackpanther" %>
       <%= f.text_field :japanese_notation, class: "form-control
