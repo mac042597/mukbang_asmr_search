@@ -2,7 +2,6 @@ class Admin::UserSessionsController < Admin::BaseController
   skip_before_action :require_login, only: %i[new create]
   skip_before_action :check_admin, only: %i[new create]
 
-  # ログインページ用のレイアウトを用意するので宣言
   layout 'admin/layouts/admin_login'
 
   def new
@@ -10,7 +9,6 @@ class Admin::UserSessionsController < Admin::BaseController
 
   def create
     @user = login(params[:email], params[:password])
-    #binding.pry
     if @user
       redirect_to admin_root_path  , success: 'ログインしました'
     else

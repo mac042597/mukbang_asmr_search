@@ -1,0 +1,17 @@
+<tr>
+  <td scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <%= each_food.japanese_notation %>
+  </td>
+  <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <%= each_food.korean_notation %>
+  </td>
+  <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <%= each_food.category.name %>
+  </td>
+  <td class="py-4 pl-6 pr-2">
+    <%= link_to (t 'defaults.edit'), edit_food_path(each_food), class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
+  </td>
+  <td class="py-4 pl-2 pr-6">
+    <%= link_to (t 'defaults.delete'), food_path(each_food), class: "font-medium text-blue-600 dark:text-blue-500 hover:underline", data: { confirm: "削除してもよろしいでしょうか" }, method: :delete %>
+  </td>
+</tr>

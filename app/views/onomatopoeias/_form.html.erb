@@ -1,0 +1,59 @@
+<div class="block p-6 mx-auto rounded-lg shadow-lg bg-white max-w-sm">
+<h1 class="mb-8 xs:text-3xl text-xl font-mplus text-blackpanther text-center">聞きたい音編集</h1>
+  <%= form_with model: onomatopoeia do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group mb-6">
+      <%= f.label :japanese_notation, class: "form-label inline-block mb-2 ext-blackpanther" %>
+      <%= f.text_field :japanese_notation, class: "form-control
+        block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-mplus
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
+      <small class="block mt-1 text-xs font-mplus text-gray-600">※日本語と韓国語表記は両方入力してください</small>
+    </div>
+    <div class="form-group mb-6">
+      <%= f.label :korean_notation, class: "form-label inline-block mb-2 text-blackpanther" %>
+      <%= f.text_field :korean_notation , class: "form-control 
+        block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-mplus
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %> 
+    </div>
+    <div class="card-footer">
+      <%= f.submit (t 'defaults.update'), class: "
+      px-6
+      py-2.5
+      text-blackpanther
+      font-mplus
+      text-sm
+      leading-tight
+      uppercase
+      rounded
+      shadow-md
+      bg-yellow-200 hover:bg-yellow-300 hover:shadow-lg
+      transition
+      duration-150
+      ease-in-out" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,22 @@
+<% content_for(:title, t('.title')) %>
+<div class="container mb-5 pt-2">
+  <h1><%= t('.title') %></h1>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col"><%= t('defaults.id') %></th>
+          <th scope="col"><%= t('defaults.name') %></th>
+          <th scope="col"><%= t('defaults.role') %></th>
+          <th scope="col"><%= t('defaults.date') %></th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+          <%= render @users %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

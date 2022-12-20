@@ -4,16 +4,23 @@ ja:
       category: 'カテゴリー'
       food: '食べ物'
       onomatopoeia: 'オノマトペ'
+      user: 'ユーザー'
     attributes:
       category:
         name: 'カテゴリー名'
       food:
         japanese_notation: '日本語表記'
         korean_notation: '韓国語表記'
+        user_id: 'ユーザーID'
         category_id: 'カテゴリー'
       onomatopoeia:
         japanese_notation: '日本語表記'
         korean_notation: '韓国語表記'
+        user_id: 'ユーザーID'
+      user:
+        name: 'ニックネーム'
+        password: 'パスワード'
+        role: '権限'
   enums:
     user:
       role:

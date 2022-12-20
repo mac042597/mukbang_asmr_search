@@ -4,12 +4,19 @@ ja:
     detail: '詳細'
     edit: '編集'
     delete: '削除'
+    login: 'ログイン'
+    sgin_up: '新規登録'
+    update: '更新'
     id: 'ID'
     category: 'カテゴリー'
     onomatopoeia: 'オノマトペ'
     date: '登録日'
     japanese_notation: '日本語表記'
     korean_notation: '韓国語表記'
+    name: 'ニックネーム'
+    password: 'パスワード'
+    role: '権限'
+    user_id: '登録ユーザーID'
     message:
       delete_confirm: '削除しますか？'
   admin:
@@ -39,6 +46,13 @@ ja:
         title: 'オノマトペ登録'
       show:
         title: 'オノマトペ詳細'
+    users:
+      edit:
+        title: 'ユーザー編集'
+      index:
+        title: 'ユーザー一覧'
+      show:
+        title: 'ユーザー詳細'
     shared:
       sidebar:
         onomatopoeia: 'オノマトペ'
@@ -49,6 +63,5 @@ ja:
         food_index: '食べ物一覧'
         category_new: 'カテゴリー登録'
         category_index: 'カテゴリー一覧'
-
-      
-
+        user: 'ユーザー'
+        user_index: 'ユーザー一覧'

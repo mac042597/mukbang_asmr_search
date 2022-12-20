@@ -4,13 +4,11 @@ class Admin::FoodsController < Admin::BaseController
 
   def index
     @foods = Food.includes(:category).all.order(created_at: :desc)
-    #binding.pry
   end
 
   def show
     @food = Food.find(params[:id])
     @onomatopoeias = @food.onomatopoeias.find_by(params[:japanese_notation])
-    #binding.pry
   end
 
   def new
@@ -18,8 +16,8 @@ class Admin::FoodsController < Admin::BaseController
   end
 
   def create
-    @food = Food.new(food_params)
-    #binding.pry
+    @food = current_user.foods.build(food_params)
+
     if @food.save
       redirect_to admin_foods_path, success: "食べ物を登録しました"
     else
@@ -52,6 +50,6 @@ class Admin::FoodsController < Admin::BaseController
   end
 
   def food_params
-    params.require(:food).permit(:japanese_notation, :korean_notation, :category_id, :onomatopoeia_ids)
+    params.require(:food).permit(:japanese_notation, :korean_notation, :category_id)
   end
 end

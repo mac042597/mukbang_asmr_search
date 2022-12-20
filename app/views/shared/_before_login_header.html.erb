@@ -1,0 +1,24 @@
+<nav class="fixed top-0 z-50 w-screen bg-white text-blackpanther border-b-2 border-yellow-200 px-4 lg:px-6 py-2.5">
+    <div class="flex flex-wrap xs:justify-between justify-center mx-auto max-w-screen-xl">
+        <div class="flex space-x-2 justify-start">
+          <%= link_to image_tag("header.png", class: "h-8 sm:h-12 aspect-auto"), root_path %>
+          <span class="self-center text-base sm:text-xl text-blackpanther font-mono whitespace-nowrap">Muksearch</span>
+          <div class="flex self-center font-mplus text-sm sm:text-base ml-2 sm:ml-4 sm:py-1 pl-2 sm:pl-4 border-l border-blackpanther">
+            <%= link_to root_path, class: "mr-5 hover:text-stone700" do %>
+              <p>Top</p>
+            <% end %>
+            <%= link_to about_path, class: "mr-5 hover:text-stone700" do %>
+              <p>About</p>
+            <% end %>
+          </div>
+        </div>
+      <div class="flex items-center lg:order-2">
+            <%= link_to login_path, class: "hover:bg-gray-50 font-mplus font-medium rounded-lg text-sm px-4 lg:px-5 py-1 lg:py-2 mr-2" do %>
+              <p>ログイン</p>
+            <% end %>
+          <%= link_to new_user_path, class: "bg-yellow-200 hover:bg-yellow-300 font-mplus font-medium rounded-lg text-sm px-4 lg:px-5 py-1 lg:py-2 mr-2" do %>
+            <p>新規登録</p>
+          <% end %>
+      </div>
+    </div>
+</nav>

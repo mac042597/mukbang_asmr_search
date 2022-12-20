@@ -18,6 +18,9 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
+  has_many :onomatopoeias, dependent: :destroy
+  has_many :foods, dependent: :destroy
+
   enum role: { general: 0, admin: 1 }
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }

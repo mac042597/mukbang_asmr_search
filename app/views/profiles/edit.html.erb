@@ -1,0 +1,24 @@
+<div class="mt-24">
+  <div class="bg-grey-lighter min-h-screen flex flex-col">
+    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+      <div class="bg-white px-6 py-8 rounded shadow-md text-blackpanther w-full">
+        <h1 class="mb-8 xs:text-3xl text-xl font-mplus text-center">登録情報変更</h1>
+        <%= form_with model: @user, url: profiles_path, local: true, class: "w-full max-w-sm" do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <%= f.email_field :email, class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "メールアドレス" %>
+          <%= f.text_field :name, class: "block border border-grey-light w-full p-3 rounded mb-4", placeholder: "ニックネーム" %>
+
+          <div class="flex items-center justify-between">
+            <%= f.submit (t 'defaults.update'), class:"w-full text-center py-3 rounded bg-yellow-200 hover:bg-yellow-300 text-blackpanther font-mplus text-sm sm:text-base  my-1" %>
+          </div>
+
+          <div class="text-blackpanther font-mplus mt-6">
+            <%= link_to profiles_path, class: "no-underline border-b border-blue text-blue" do %>
+              戻る
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
