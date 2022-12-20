@@ -6,7 +6,7 @@ class OnomatopoeiasController < ApplicationController
     @onomatopoeia_lanks = Onomatopoeia.find(OnomatopoeiaClick.where(created_at: Time.current.all_month).limit(3).group(:onomatopoeia_id).order('count(onomatopoeia_id) desc').pluck(:onomatopoeia_id))
     @onomatopoeias = Onomatopoeia.all
     user_ids =  User.where(role: "general").ids
-    @user_onomatopoeias = Onomatopoeia.find_by(user_id: user_ids)
+    @user_onomatopoeias = Onomatopoeia.where(user_id: user_ids)
     @onomatopoeia = Onomatopoeia.new
   end
 
@@ -16,6 +16,10 @@ class OnomatopoeiasController < ApplicationController
     if @onomatopoeia.save
       redirect_to onomatopoeias_path, notice: "オノマトペを登録しました"
     else
+      @onomatopoeia_lanks = Onomatopoeia.find(OnomatopoeiaClick.where(created_at: Time.current.all_month).limit(3).group(:onomatopoeia_id).order('count(onomatopoeia_id) desc').pluck(:onomatopoeia_id))
+      @onomatopoeias = Onomatopoeia.all
+      user_ids =  User.where(role: "general").ids
+      @user_onomatopoeias = Onomatopoeia.where(user_id: user_ids)
       flash.now[:alert] = "オノマトペの登録に失敗しました"
       render :index
     end
