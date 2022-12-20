@@ -6,7 +6,7 @@ class FoodsController < ApplicationController
     @food_lanks = Food.find(FoodClick.where(created_at: Time.current.all_month).limit(3).group(:food_id).order('count(food_id) desc').pluck(:food_id))
     @foods = Food.all
     user_ids =  User.where(role: "general").ids
-    @user_foods = Food.find_by(user_id: user_ids)
+    @user_foods = Food.where(user_id: user_ids)
     @food = Food.new
   end
 
@@ -16,6 +16,10 @@ class FoodsController < ApplicationController
     if @food.save
       redirect_to foods_path, notice: "食べ物を登録しました"
     else
+      @food_lanks = Food.find(FoodClick.where(created_at: Time.current.all_month).limit(3).group(:food_id).order('count(food_id) desc').pluck(:food_id))
+      @foods = Food.all
+      user_ids =  User.where(role: "general").ids
+      @user_foods = Food.where(user_id: user_ids)
       flash.now[:alert] = "食べ物の登録に失敗しました"
       render :index
     end

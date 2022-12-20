@@ -1,7 +1,8 @@
 <div class="block p-6 mx-auto rounded-lg shadow-lg bg-white max-w-sm">
-    <h1 class="mb-8 xs:text-3xl text-xl font-mplus text-blackpanther text-center">食べ物編集</h1>
+    <h1 class="mb-8 xs:text-3xl text-xl font-mplus text-blackpanther text-center">食べ物用語フォーム</h1>
     <%= form_with model: food do |f| %>
       <div class="form-group mb-6">
+        <%= render 'shared/error_messages', object: f.object %>
         <%= f.label :japanese_notation, class: "form-label inline-block mb-2 text-gray-700"%>
         <%= f.text_field :japanese_notation, class: "form-control
           block
@@ -57,7 +58,7 @@
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %> 
       </div>
       <div class="card-footer">
-        <%= f.submit (t 'defaults.update'), class: "
+        <%= f.submit (t 'defaults.register'), class: "
         px-6
         py-2.5
         text-blackpanther
@@ -71,11 +72,6 @@
         transition
         duration-150
         ease-in-out" %>
-      </div>
-      <div class="text-blackpanther font-mplus mt-6">
-        <%= link_to profiles_path, class: "no-underline border-b border-blue text-blue" do %>
-          戻る
-        <% end %>
       </div>
     <% end %>
   </div>
