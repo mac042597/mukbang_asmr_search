@@ -1,5 +1,5 @@
 <div class="block p-6 mx-auto rounded-lg shadow-lg bg-white max-w-sm">
-<h1 class="mb-8 xs:text-3xl text-xl font-mplus text-blackpanther text-center">聞きたい音編集</h1>
+<h1 class="mb-8 xs:text-3xl text-xl font-mplus text-blackpanther text-center">聞きたい音用語フォーム</h1>
   <%= form_with model: onomatopoeia do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="form-group mb-6">
@@ -40,7 +40,7 @@
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %> 
     </div>
     <div class="card-footer">
-      <%= f.submit (t 'defaults.update'), class: "
+      <%= f.submit (t 'defaults.register'), class: "
       px-6
       py-2.5
       text-blackpanther
