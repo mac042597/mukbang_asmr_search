@@ -13,14 +13,12 @@
           </div>
         </div>
       <div class="flex items-center lg:order-2">
-            <%= link_to logout_path, class: "hover:bg-gray-50 font-mplus font-medium rounded-lg text-sm px-4 lg:px-5 py-1 lg:py-2 mr-2", method: :delete do %>
-              <p>ログアウト</p>
+            <%= link_to login_path, class: "hover:bg-gray-50 font-mplus font-medium rounded-lg text-sm px-4 lg:px-5 py-1 lg:py-2 mr-2" do %>
+              <p>ログイン</p>
             <% end %>
-          <%= link_to profiles_path, class: "bg-yellow-200 hover:bg-yellow-300 font-mplus font-medium rounded-lg text-sm px-4 lg:px-5 py-1 lg:py-2 mr-2" do %>
-            <p>マイページ</p>
+          <%= link_to new_user_path, class: "bg-yellow-200 hover:bg-yellow-300 font-mplus font-medium rounded-lg text-sm px-4 lg:px-5 py-1 lg:py-2 mr-2" do %>
+            <p>新規登録</p>
           <% end %>
       </div>
     </div>
 </nav>
-
-
