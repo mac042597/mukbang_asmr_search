@@ -4,13 +4,11 @@ class Admin::FoodsController < Admin::BaseController
 
   def index
     @foods = Food.includes(:category).all.order(created_at: :desc)
-    #binding.pry
   end
 
   def show
     @food = Food.find(params[:id])
     @onomatopoeias = @food.onomatopoeias.find_by(params[:japanese_notation])
-    #binding.pry
   end
 
   def new
@@ -52,6 +50,6 @@ class Admin::FoodsController < Admin::BaseController
   end
 
   def food_params
-    params.require(:food).permit(:japanese_notation, :korean_notation, :category_id, :onomatopoeia_ids)
+    params.require(:food).permit(:japanese_notation, :korean_notation, :category_id)
   end
 end
