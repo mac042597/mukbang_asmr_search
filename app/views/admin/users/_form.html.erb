@@ -1,5 +1,5 @@
 <%= form_with(model: [ :admin, user ]) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %> 
+  <%= render 'admin/shared/error_messages', object: f.object %>
   <div class="form-group">
     <%= f.label :email %>
     <%= f.text_field :email, class: 'form-control' %>

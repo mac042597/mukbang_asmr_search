@@ -1,5 +1,5 @@
 <%= form_with(model: [ :admin, food ]) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %> 
+  <%= render 'admin/shared/error_messages', object: f.object %> 
   <div class="form-group">
     <%= f.label :japanese_notation %>
     <%= f.text_field :japanese_notation, class: 'form-control' %>

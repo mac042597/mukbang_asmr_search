@@ -7,7 +7,7 @@ class Admin::CategoriesController < Admin::BaseController
   def create
     @category = Category.new(category_params)
     if @category.save
-        redirect_to admin_categories_path, notice: "カテゴリーを登録しました"
+        redirect_to admin_categories_path, success: "カテゴリーを登録しました"
     else
         render :new
     end
