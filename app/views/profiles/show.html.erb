@@ -1,11 +1,12 @@
-
 <div class="mt-24">
   <div class="bg-gray-300 antialiased">
     <div class="container mx-auto my-60">
       <div>
         <div class="bg-white relative shadow rounded-lg w-5/6 md:w-5/6  lg:w-4/6 xl:w-3/6 mx-auto">
           <div class="flex justify-center">
-            <img src="https://avatars0.githubusercontent.com/u/35900628?v=4" alt="" class="rounded-full mx-auto absolute -top-20 w-32 h-32 shadow-md border-4 border-white transition duration-200 transform hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="rounded-full mx-auto absolute -top-20 w-32 h-32 shadow-md border-4 border-white transition duration-200 transform hover:scale-110">
+              <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
+            </svg>
           </div>         
           <div class="mt-16">
               <h1 class="font-bold text-center text-3xl text-gray-900"><%= @user.name %></h1>
@@ -20,24 +21,79 @@
                 <p>登録情報変更</p>
               <% end %>
               <%# 仮のユーザー作って退会する。退会するときに、退会しますか？のポップを出す。%>
-              <%= link_to "#", class: "text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3" do%>
+              <%= link_to user_path(current_user.id), data: { confirm: "本当に退会しますか？" }, method: :delete, class: "text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3" do%>
                 <p>退会する</p>
               <% end %>
             </div>
 
             <div class="w-full">
-              <h3 class="font-medium text-gray-900 text-left px-6">Activites</h3>
-                <div class="mt-5 w-full flex flex-col items-center overflow-hidden text-sm">
-                  <%# お気に入りした言葉を表示。なしの場合「登録はありません」表示する%>
-                  <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
-                    <img src="https://avatars0.githubusercontent.com/u/35900628?v=4" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
-                      Your favorite seach words
-                  </a>
+              <div class="mt-5 w-full flex flex-col items-center overflow-hidden text-sm">
+                <%# お気に入りした言葉を表示。なしの場合「登録はありません」表示する%>
+                <div class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block transition duration-150">
+                  <% if @each_onomatopoeias.present? %>
+                    <table class="table-auto w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                      <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                      登録用語一覧
+                      <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+                      聞きたい音</p>
+                      </caption>
+                      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                          <th scope="col" class="py-3 px-6">日本語表記</th>
+                          <th scope="col" class="py-3 px-6">韓国語表記</th>
+                          <th scope="col" class="py-3 px-6">
+                            <span class="sr-only">編集</span>
+                          </th>
+                          <th scope="col" class="py-3 px-6">
+                            <span class="sr-only">削除</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <%= render partial: 'each_onomatopoeia', collection: @each_onomatopoeias, as: :each_onomatopoeia %>
+                      </tbody>
+                    </table>
+                  <% else %>
+                    <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                    <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+                      見たい食べ物</p>
+                    </caption>
+                    <p>現在登録したワードはありません</p>
+                  <% end %>
+                </div>
+                <div class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block transition duration-150">
+                  <% if @each_foods.present? %>
+                    <table class="table-auto w-full mt-6 text-sm text-left text-gray-500 dark:text-gray-400">
+                      <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                      <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+                      見たい食べ物</p>
+                      </caption>
+                      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                          <th scope="col" class="py-3 px-6">日本語表記</th>
+                          <th scope="col" class="py-3 px-6">韓国語表記</th>
+                          <th scope="col" class="py-3 px-6">カテゴリー</th>
+                          <th scope="col" class="py-3 px-6">
+                            <span class="sr-only">編集</span>
+                          </th>
+                          <th scope="col" class="py-3 px-6">
+                            <span class="sr-only">削除</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <%= render partial: 'each_food', collection: @each_foods, as: :each_food %>
+                      </tbody>
+                    </table>
+                  <% else %>
+                    <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                    <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
+                      見たい食べ物</p>
+                    </caption>
+                    <p>現在登録したワードはありません</p>
+                  <% end %>
+                </div>
                   <%# 登録した言葉を表示。削除、編集できるようにCRUD機能も設けておく。コントローラーどうしようadminで使える？別途いるかな？%>
-                  <a href="#" class="w-full border-t border-gray-100 text-gray-600 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
-                    <img src="https://avatars0.githubusercontent.com/u/35900628?v=4" alt="" class="rounded-full h-6 shadow-md inline-block mr-2">
-                      Seach words you registered
-                  </a>
                 </div>
             </div>
           </div>

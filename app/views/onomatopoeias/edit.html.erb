@@ -1,0 +1,14 @@
+<div class="mt-40 mb-20">
+  <%= render 'form', { onomatopoeia: @onomatopoeia } %>
+
+  <div class="flex justify-center items-center my-10">
+    <%= link_to profiles_path do%>
+      <button class="inline-flex items-center h-10 px-5 text-blackpanther font-udpmincho bg-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+        </svg>
+        <span> 戻る </span>
+      </button>
+    <% end %>
+  </div>
+</div>

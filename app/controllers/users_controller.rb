@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: %i[destroy]
 
   def new
     @user = User.new
@@ -13,6 +14,12 @@ def create
         flash.now[:danger] = "ユーザー登録できませんでした"
         render :new
     end
+end
+
+def destroy
+  binding.pry
+  @user.destroy!
+  redirect_to root_path, success: "退会しました"
 end
 
 private

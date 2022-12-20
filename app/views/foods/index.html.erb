@@ -4,18 +4,20 @@
       <div class="text-center mb-8">
         <h1 class="lg:text-3xl text-2xl text-center text-blackpanther font-udpmincho mb-4">見たい食べ物から検索</h1>
         <p class="font-mplus sm:text-base text-sm text-blackpanther">気になる単語で検索してみる</p>
+      </div>
+      <form class="mx-auto sm:max-w-md max-w-sm">
         <%= form_with url: index_path, method: :get, local: true, class: "w-full max-w-sm" do |form| %>
           <div class="flex justify-center border-b border-teal-500 py-2">
             <%= form.text_field :lang, placeholder: "フリーワード検索 例)お餅 or 떡", class: "appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"  %>
-            <%= form.submit "検索", class: "flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" %>
+            <%= form.submit "検索", class: "flex-shrink-0 text-white bg-yellow-200 hover:bg-yellow-400 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full sm:text-sm text-xs px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900" %>
           </div>
         <% end %>
-      </div>
+      </form>
     </div>
   </section>
 
   <section class="mt-20">
-    <p class="font-mplus sm:text-base text-sm text-blackpanther">気になる食べ物をクリック</p>
+    <p class="font-mplus sm:text-base text-center text-sm text-blackpanther">気になる食べ物をクリック</p>
     <p class="mb-2 lg:text-sm text-xs text-center text-stone500 font-udpmincho underline">RANKING</p>
     <h1 class="mb-10 lg:text-3xl text-2xl text-center text-blackpanther font-udpmincho">月間ランキング</h1>
     <div class="container mx-auto">
@@ -24,7 +26,7 @@
       <% end %>
     </div>
   </section>
-  
+
   <section class="lg:mt-32 mt-16">
     <p class="mb-2 lg:text-sm text-xs text-center text-stone500 font-udpmincho underline">WORD LIST</p>
     <h1 class="mb-8 lg:text-3xl text-2xl text-center text-blackpanther font-udpmincho">検索ワード一覧</h1>
@@ -36,6 +38,49 @@
       <% end %>
     </div>
   </section>
+
+  <section class="lg:mt-32 mt-16">
+    <p class="mb-2 lg:text-sm text-xs text-center text-stone500 font-udpmincho underline">WORD LIST FOR EVERYONE</p>
+    <h1 class="mb-8 lg:text-3xl text-2xl text-center text-blackpanther font-udpmincho">みんなが登録した検索ワード</h1>
+    <div class="container mx-auto p-5">
+      <% if @user_foods.present? %>
+        <div class="grid md:grid-cols-6 lg:grid-cols-8 grid-cols-4 gap-x-2 gap-y-4 content-center">
+          <%= render @user_foods %>
+        </div>
+      <% else %>
+        <div class="text-center mb-8">
+          <% if logged_in? %>
+            <p class="font-mplus sm:text-base text-sm text-blackpanther">現在登録ワードがありません</p>
+            <p class="font-mplus sm:text-base text-sm text-blackpanther">フォームから登録しませんか</p>
+            <%= image_tag "word_new.png", class: "h-48 aspect-auto mx-auto mt-2" %>
+          <% else %>
+            <p class="font-mplus sm:text-base text-sm text-blackpanther">現在登録ワードがありません</p>
+            <p class="font-mplus sm:text-base text-sm text-blackpanther">会員登録後フォームから登録しませんか</p>
+            <%= image_tag "word_new.png", class: "h-48 aspect-auto mx-auto mt-2" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="mt-20">
+    <p class="mb-2 lg:text-sm text-xs text-center text-stone500 font-udpmincho underline">FORM</p>
+    <h1 class="mb-8 lg:text-3xl text-2xl text-center text-blackpanther font-udpmincho">任意ワード登録フォーム</h1>
+    <div class="container mx-auto p-5">
+      <div class="text-center mb-8">
+        <% if logged_in? %>
+          <p class="mb-4 font-mplus sm:text-base text-sm text-blackpanther">お好みの検索ワードを登録してみよう</p>
+          <%= render 'form', { food: @food } %>
+        <% else %>
+          <p class="font-mplus sm:text-base text-sm text-blackpanther">任意ワード登録は会員限定</p>
+          <%= image_tag "user_new.png", class: "h-48 aspect-auto mx-auto mt-2" %>
+          <%# リンクの色変える ほばーとか %>
+          <%= link_to "ユーザー登録はこちら", new_user_path, class: "font-mplus sm:text-base text-sm text-blackpanther px-6 py-2 text-base font-medium leading-6 whitespace-no-wrap border-2 border-transparent rounded-full shadow-sm bg-yellow-200 hover:bg-yellow-400 hover:text-white hover:border-white focus:outline-none" %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
   <div class="flex justify-center items-center my-10">
     <%= link_to root_path do%>
       <button class="inline-flex items-center h-10 px-5 text-blackpanther font-udpmincho bg-white">
